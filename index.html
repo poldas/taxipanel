@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taxi Mapa</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0c_Op7U-z53YgfhXSyzJjZe1OhqNWwL0&sensor=false"></script>
+    <script type="text/javascript" src="gmaps.js"></script>
+    <script type="text/javascript" src="taximapa.js"></script>
+  </head>
+  <body>
+  <div id="wraper">
+    <div id="mapa"></div>
+    <div id="szukaj">
+        <input type="text" id="taxi-szukaj-od" placeholder="Miejsce startu">
+        <a id="taxi-switch"><----></a>
+        <input type="text" id="taxi-szukaj-do" placeholder="Miejsce docelowe">     
+        <input type="text" id="taxi-szukaj-telefon" placeholder="telefon np. 543 876 234">                                           
+        <input type="button" id="taxi-szukaj-przycisk" value="Szukaj" class="button">
+        <input type="button" id="taxi-szukaj-dodaj" value="Dodaj klienta" class="button">
+    </div>
+    <div id="taxi-panel">
+        <div>
+            <h3>Dodaj klienta</h3>
+            <ul id="taxi-lista">
+                <li>
+                    <p>
+                        <label for="taxi-nazwa">
+                            Telefon:
+                        </label>
+                        <input type="text" id="taxi-nazwa">
+                    </p>
+                    <p>
+                        <label for="taxi-ulica">
+                            Adres:
+                        </label>
+                        <input type="text" id="taxi-ulica">
+                    </p>
+                    <p>
+                        <a href="#" class="button dodaj">Dodaj klienta</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        
+        <div>
+            <h3>Lista Klientów</h3>
+            <ul id="taxi-lista-klientow" class="dropable"></ul>
+        </div>
+        <div>
+            <h3>Lista Taxówek</h3>
+            <ul id="taxi-lista-taxowek">
+                <li>
+                    <h4>Taxi 1</h4>
+                    <p class="dropable"></p>
+                </li>
+                <li>
+                    <h4>Taxi 2</h4>
+                    <p class="dropable"></p>
+                </li>
+                <li>
+                    <h4>Taxi 3</h4>
+                    <p class="dropable"></p>
+                </li>
+            </ul>
+        </div>
+    </div>    
+  </div>
+  </body>
+</html>
